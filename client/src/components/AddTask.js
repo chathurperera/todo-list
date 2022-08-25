@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '../styles/AddTask.module.scss';
+import styles from "../styles/AddTask.module.scss";
 const AddTask = () => {
   return (
     <div className={styles.addTask}>
