@@ -4,10 +4,10 @@ import editing from '../assets/editing.png';
 import check from '../assets/check.png';
 import deleteIcon from '../assets/delete.png';
 
-const Task = () => {
+const Task = ({task}) => {
   return (
     <div className={styles.taskWrapper}>
-        <p>Clean the room</p>
+        <p>{task}</p>
         <div className={styles.actions}>
             <img src={check} alt="check icon" />
             <img src={editing} alt="edit icon" />
