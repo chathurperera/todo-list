@@ -6,8 +6,7 @@ import AddTask from "./components/AddTask";
 import NoTasks from "./components/NoTasks";
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false);
-  // const tasks = ["Clean up the room", "Go to the Gym"];
-  const tasks = [];
+  const tasks = ["Clean up the room", "Go to the Gym"];
   const tasksList = tasks.map((task) => {
     return <Task task={task} />;
   });
