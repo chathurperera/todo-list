@@ -1,0 +1,23 @@
+.taskWrapper{
+    
+    border-radius: 20px;
+    padding: 10px 20px;
+    max-width: 450px;
+    margin: 10px auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    justify-content: space-between;
+    p{
+        font-weight: 600;
+    }
+
+    .actions{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        img{
+            cursor: pointer;
+            width: 20px;
+        }
+    }
+}
