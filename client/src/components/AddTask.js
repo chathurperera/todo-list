@@ -11,7 +11,7 @@ const AddTask = ({ setShowAddTask, setTasks }) => {
   const [showValidations, setShowValidations] = useState(false);
   const submitTask = () => {
     if (taskPayload.task === "") {
-      showValidations(true);
+      setShowValidations(true);
       return;
     }
     console.log(taskPayload);
@@ -41,6 +41,9 @@ const AddTask = ({ setShowAddTask, setTasks }) => {
         type="text"
         onChange={(e) => setTaskPayload({ task: e.target.value, done: false })}
       />
+      {showValidations && (
+        <small className={styles.validationError}>Please enter a task</small>
+      )}
       <div className={styles.buttonWrap}>
         <button onClick={() => setShowAddTask(false)}>Close</button>
         <button onClick={submitTask}>Add Task</button>
