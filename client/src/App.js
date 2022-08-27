@@ -9,7 +9,7 @@ const App = () => {
   const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([]);
   const tasksList = tasks?.map((task) => {
-    return <Task  task={task.task} key={task._id} />;
+    return <Task task={task.task} key={task._id} />;
   });
   useEffect(() => {
     axios.get("/api/v1/tasks").then((res) => {
@@ -21,7 +21,9 @@ const App = () => {
     <div className={styles.app}>
       <div className={styles.wrapper}>
         {tasks.length > 0 ? tasksList : <NoTasks />}
-        {showAddTask && <AddTask setShowAddTask={setShowAddTask} />}
+        {showAddTask && (
+          <AddTask setTasks={setTasks} setShowAddTask={setShowAddTask} />
+        )}
         <div className={styles.addButton}>
           <button onClick={() => setShowAddTask(true)}>
             <img src={addIcon} alt="" />

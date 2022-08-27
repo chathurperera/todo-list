@@ -3,7 +3,7 @@ import axios from "axios";
 
 import styles from "../styles/AddTask.module.scss";
 
-const AddTask = ({ setShowAddTask }) => {
+const AddTask = ({ setShowAddTask, setTasks }) => {
   const [taskPayload, setTaskPayload] = useState({
     task: "",
     done: false,
@@ -20,6 +20,14 @@ const AddTask = ({ setShowAddTask }) => {
       .then((res) => {
         setShowAddTask(false);
         console.log(res);
+        axios
+          .get("/api/v1/tasks")
+          .then((res) => {
+            setTasks(res.data.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
       .catch((error) => {
         console.log(error);
